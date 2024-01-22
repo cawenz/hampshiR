@@ -16,6 +16,8 @@ String of the constructed url drawn from the .iqy file.
 Title
 }
 \examples{
-path <- "path/to/iqyfile.iqy"
-parseIqyUrl(path)
+path <- file("https://raw.githubusercontent.com/cawenz/HCephemera/main/buildings.iqy")
+url <- parseIqyUrl(path)
+x <- getIqyData(url)
+close(path)
 }
