@@ -6,10 +6,11 @@
 #' @export parseIqyUrl
 #'
 #' @examples
+#' \dontrun{
 #' path <- file("https://raw.githubusercontent.com/cawenz/HCephemera/main/buildings.iqy")
 #' url <- parseIqyUrl(path)
 #' x <- getIqyData(url)
-#' close(path)
+#' close(path)}
 parseIqyUrl <- function(path) {
   q <- readLines(path)
   qurl <- paste(q[3], q[4], sep = "?")
@@ -17,17 +18,20 @@ parseIqyUrl <- function(path) {
 }
 
 
+
 #' Title
 #'
-#' @param url A valid url, often the result of running parseIqyUrlthat will fetch current data from Informer.
-#' @return A data.frame containing the requested data. Missing values will be converted to NA.
-#' @export getIqyData
+#' @param url A valid url string for a report in Informer, usually generated using parseIqyUrl
+#'
+#' @return a data.frame of results from querying Informer.
+#' @export
 #'
 #' @examples
+#'  \dontrun{
 #' path <- file("https://raw.githubusercontent.com/cawenz/HCephemera/main/buildings.iqy")
 #' url <- parseIqyUrl(path)
 #' x <- getIqyData(url)
-#' close(path)
+#' close(path)}
 getIqyData <- function(url){
   res <- httr2::request(url) |>
           httr2::req_perform() |>

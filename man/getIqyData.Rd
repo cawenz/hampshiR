@@ -7,17 +7,18 @@
 getIqyData(url)
 }
 \arguments{
-\item{url}{A valid url, often the result of running parseIqyUrlthat will fetch current data from Informer.}
+\item{url}{A valid url string for a report in Informer, usually generated using parseIqyUrl}
 }
 \value{
-A data.frame containing the requested data. Missing values will be converted to NA.
+a data.frame of results from querying Informer.
 }
 \description{
 Title
 }
 \examples{
+ \dontrun{
 path <- file("https://raw.githubusercontent.com/cawenz/HCephemera/main/buildings.iqy")
 url <- parseIqyUrl(path)
 x <- getIqyData(url)
-close(path)
+close(path)}
 }

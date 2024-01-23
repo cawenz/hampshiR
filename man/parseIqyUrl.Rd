@@ -16,8 +16,9 @@ String of the constructed url drawn from the .iqy file.
 Title
 }
 \examples{
+\dontrun{
 path <- file("https://raw.githubusercontent.com/cawenz/HCephemera/main/buildings.iqy")
 url <- parseIqyUrl(path)
 x <- getIqyData(url)
-close(path)
+close(path)}
 }

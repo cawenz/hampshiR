@@ -10,4 +10,6 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 Imports: 
     httr2,
-    rvest
+    lubridate,
+    rvest,
+    utils
