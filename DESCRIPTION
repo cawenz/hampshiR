@@ -1,5 +1,5 @@
 Package: hampshir
-Title: What the Package Does (One Line, Title Case)
+Title: Make Working with Hampshire Data Easier
 Version: 0.0.0.9000
 Authors@R: 
     person("Chris", "Wenz", , "cawCR@hampshire.edu", role = c("aut", "cre"))
@@ -7,7 +7,7 @@ Description: Provides a variety of functions useful for working with Hampshire C
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.1
 Imports: 
     httr2,
     lubridate,
