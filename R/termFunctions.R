@@ -13,30 +13,23 @@
 #' x <- 106
 #' termFromNum(x)
 termFromNum <- function(x){
-  if(x < 0){
-    stop("Term number must be greater than 0")
-  }
-  else if(!x %% 2 %in% c(1.5, 0.5,0,1)){
-    stop("Term numbers must be whole or end with a decimal of 0.5.")
-  }
-  else{
-    rem <- x %% 2
+  x <- as.numeric(x)
+  rem <- x %% 2
 
-    subt <- ifelse(rem==1.5, -0.5,
-                        ifelse(rem==0.5, 0.5,
-                                      ifelse(rem==0, 0,
-                                                   1
-                                      )))
+  subt <- ifelse(rem==1.5, -0.5,
+                 ifelse(rem==0.5, 0.5,
+                        ifelse(rem==0, 0,
+                               1
+                        )))
 
-    season <- ifelse(rem==1.5, "J",
-                           ifelse(rem==0.5, "A",
-                                        ifelse(rem==0, "S", "F"
-                                        )))
+  season <- ifelse(rem==1.5, "J",
+                   ifelse(rem==0.5, "A",
+                          ifelse(rem==0, "S", "F"
+                          )))
 
-    year <- ((x-subt)/2)+1970
-    t <- paste0(year,season)
-    t
-  }
+  year <- ((x-subt)/2)+1970
+  t <- paste0(year,season)
+  t
 }
 
 
